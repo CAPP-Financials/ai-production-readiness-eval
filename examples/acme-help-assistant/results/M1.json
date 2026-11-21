@@ -1,0 +1,87 @@
+{
+  "module": "M1",
+  "applicable": true,
+  "evaluator": "agent-m1",
+  "run_at": "2026-11-21T10:00:00Z",
+  "config_under_test": "v2.3.0, model pinned to a dated version, prompt v11, index 2026-11-18",
+  "dataset": {
+    "name": "golden-v4",
+    "n": 400,
+    "sha256": "example",
+    "held_out": true,
+    "source": "sampled from Oct 2026 support logs"
+  },
+  "metrics": [
+    {
+      "id": "OQ-01",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 382,
+        "n": 400
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OQ-01.md",
+      "judge_kappa": 0.74,
+      "notes": "golden n=400 plus shadow rescoring"
+    },
+    {
+      "id": "OQ-02",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 4,
+        "n": 400
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OQ-02.md",
+      "judge_kappa": 0.71
+    },
+    {
+      "id": "OQ-03",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 392,
+        "n": 400
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/OQ-03.md",
+      "judge_kappa": 0.69
+    },
+    {
+      "id": "OQ-05",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 380,
+        "n": 400
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/OQ-05.md",
+      "judge_kappa": 0.7
+    },
+    {
+      "id": "OQ-06",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 384,
+        "n": 400
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/OQ-06.md"
+    },
+    {
+      "id": "OQ-08",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.02
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/OQ-08.md"
+    }
+  ],
+  "findings": []
+}

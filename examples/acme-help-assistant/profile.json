@@ -1,0 +1,97 @@
+{
+  "system": "Acme Help Assistant v2.3 (fictional example)",
+  "owner": "Support Platform team",
+  "eval_date": "2026-11-21",
+  "risk_tier": "standard",
+  "flags": {
+    "has_rag": true,
+    "is_agentic": false,
+    "has_side_effects": false,
+    "structured_output": false,
+    "emits_confidence": false,
+    "streams": true,
+    "user_facing": true,
+    "decisions_about_people": false
+  },
+  "params": {
+    "OPS_PEAK_RPS": 6,
+    "SAF_PROTECTED_ATTRIBUTES": "customer language, region",
+    "SAF_ALLOWED_REGIONS": "EU",
+    "BIZ_HUMAN_BASELINE_COST": 3.8,
+    "BIZ_HUMAN_BASELINE_MINUTES": 11
+  },
+  "overrides": {
+    "OPS-01": {
+      "target": 5000,
+      "floor": 7500,
+      "reason": "chat SLA"
+    },
+    "OPS-05": {
+      "target": 0.04,
+      "floor": 0.048,
+      "reason": "USD budget per resolved conversation"
+    },
+    "BIZ-01": {
+      "target": 0.6,
+      "floor": 0.48,
+      "reason": "business case"
+    },
+    "BIZ-04": {
+      "target": 6,
+      "floor": 3,
+      "reason": "business case"
+    },
+    "BIZ-05": {
+      "target": 0.7,
+      "floor": 1.0,
+      "reason": "suggested default accepted"
+    },
+    "BIZ-06": {
+      "target": 12,
+      "floor": 24,
+      "reason": "suggested default accepted"
+    }
+  },
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "text": "Answers only from the published help centre",
+      "priority": "must",
+      "verified_by": [
+        "RAG-05",
+        "OQ-02"
+      ]
+    },
+    {
+      "id": "REQ-02",
+      "text": "Replies in the customer's language",
+      "priority": "must",
+      "verified_by": [
+        "custom"
+      ]
+    },
+    {
+      "id": "REQ-03",
+      "text": "Hands billing disputes to a human agent",
+      "priority": "must",
+      "verified_by": [
+        "custom"
+      ]
+    },
+    {
+      "id": "REQ-04",
+      "text": "Tone follows the brand voice guide",
+      "priority": "should",
+      "verified_by": [
+        "OQ-03"
+      ]
+    }
+  ],
+  "evidence_access": [
+    "design_docs",
+    "staging",
+    "shadow_traffic",
+    "golden_set",
+    "cost_dashboard"
+  ]
+}

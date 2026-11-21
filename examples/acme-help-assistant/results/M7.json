@@ -1,0 +1,84 @@
+{
+  "module": "M7",
+  "applicable": true,
+  "evaluator": "agent-m7",
+  "run_at": "2026-11-21T10:00:00Z",
+  "config_under_test": "v2.3.0, model pinned to a dated version, prompt v11, index 2026-11-18",
+  "dataset": {
+    "name": "golden-v4",
+    "n": 400,
+    "sha256": "example",
+    "held_out": true,
+    "source": "sampled from Oct 2026 support logs"
+  },
+  "metrics": [
+    {
+      "id": "BIZ-01",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.64
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/BIZ-01.md"
+    },
+    {
+      "id": "BIZ-02",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 26,
+        "n": 400
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/BIZ-02.md"
+    },
+    {
+      "id": "BIZ-03",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 360,
+        "n": 420
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/BIZ-03.md"
+    },
+    {
+      "id": "BIZ-04",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 7.5
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/BIZ-04.md"
+    },
+    {
+      "id": "BIZ-05",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.42
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/BIZ-05.md"
+    },
+    {
+      "id": "BIZ-06",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 7
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/BIZ-06.md"
+    }
+  ],
+  "findings": [],
+  "requirements_results": {
+    "REQ-02": "PASS",
+    "REQ-03": "PASS"
+  },
+  "requirements_grade": "E3"
+}

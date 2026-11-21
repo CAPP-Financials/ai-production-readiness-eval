@@ -1,0 +1,131 @@
+{
+  "module": "M5",
+  "applicable": true,
+  "evaluator": "agent-m5",
+  "run_at": "2026-11-21T10:00:00Z",
+  "config_under_test": "v2.3.0, model pinned to a dated version, prompt v11, index 2026-11-18",
+  "dataset": {
+    "name": "golden-v4",
+    "n": 400,
+    "sha256": "example",
+    "held_out": true,
+    "source": "sampled from Oct 2026 support logs"
+  },
+  "metrics": [
+    {
+      "id": "OPS-01",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 3900
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-01.md"
+    },
+    {
+      "id": "OPS-02",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 1100
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-02.md"
+    },
+    {
+      "id": "OPS-03",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 41,
+        "n": 21600
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-03.md"
+    },
+    {
+      "id": "OPS-04",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.9978
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-04.md"
+    },
+    {
+      "id": "OPS-05",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.031
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-05.md"
+    },
+    {
+      "id": "OPS-06",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 310,
+        "n": 21600
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-06.md"
+    },
+    {
+      "id": "OPS-07",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-07.md",
+      "notes": "9 rps for 2 h, OQ-01 drop 1 pt"
+    },
+    {
+      "id": "OPS-08",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-08.md",
+      "notes": "11 dependencies x 4 failure modes"
+    },
+    {
+      "id": "OPS-09",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-09.md"
+    },
+    {
+      "id": "OPS-10",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-10.md"
+    },
+    {
+      "id": "OPS-11",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 12
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/OPS-11.md"
+    }
+  ],
+  "findings": []
+}

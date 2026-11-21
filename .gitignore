@@ -1,0 +1,4 @@
+# evaluation runs can hold real traces, prompts or customer data; commit them deliberately, not by default
+evaluations/
+__pycache__/
+*.pyc

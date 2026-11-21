@@ -1,0 +1,88 @@
+{
+  "system": "<name and version under test>",
+  "owner": "<who owns it>",
+  "eval_date": "YYYY-MM-DD",
+  "risk_tier": "standard",
+  "flags": {
+    "has_rag": true,
+    "is_agentic": false,
+    "has_side_effects": false,
+    "structured_output": true,
+    "emits_confidence": false,
+    "streams": true,
+    "user_facing": true,
+    "decisions_about_people": false
+  },
+  "params": {
+    "OPS_PEAK_RPS": 5,
+    "SAF_PROTECTED_ATTRIBUTES": "gender, region",
+    "SAF_ALLOWED_REGIONS": "IN, EU",
+    "BIZ_HUMAN_BASELINE_COST": 4.0,
+    "BIZ_HUMAN_BASELINE_MINUTES": 12
+  },
+  "overrides": {
+    "OPS-01": {
+      "target": 5000,
+      "floor": 7500,
+      "reason": "chat SLA agreed with client"
+    },
+    "OPS-05": {
+      "target": 0.05,
+      "floor": 0.06,
+      "reason": "USD budget per resolved ticket"
+    },
+    "BIZ-01": {
+      "target": 0.6,
+      "floor": 0.48,
+      "reason": "business case"
+    },
+    "BIZ-04": {
+      "target": 8,
+      "floor": 4,
+      "reason": "business case"
+    },
+    "BIZ-05": {
+      "target": 0.7,
+      "floor": 1.0,
+      "reason": "suggested default accepted"
+    },
+    "BIZ-06": {
+      "target": 12,
+      "floor": 24,
+      "reason": "suggested default accepted"
+    }
+  },
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "text": "Answers only from the policy corpus",
+      "priority": "must",
+      "verified_by": [
+        "RAG-05",
+        "RAG-08"
+      ]
+    },
+    {
+      "id": "REQ-02",
+      "text": "Replies in the customer's language",
+      "priority": "must",
+      "verified_by": [
+        "custom"
+      ]
+    },
+    {
+      "id": "REQ-03",
+      "text": "Tone follows the brand guide",
+      "priority": "should",
+      "verified_by": [
+        "OQ-03"
+      ]
+    }
+  ],
+  "evidence_access": [
+    "design_docs",
+    "staging",
+    "prod_logs",
+    "golden_set"
+  ]
+}

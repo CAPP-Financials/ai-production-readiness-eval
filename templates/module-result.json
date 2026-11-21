@@ -1,0 +1,65 @@
+{
+  "module": "M2",
+  "applicable": true,
+  "na_reason": "",
+  "evaluator": "agent or person name",
+  "run_at": "2026-11-21T10:00:00+05:30",
+  "config_under_test": "commit abc123, model claude-sonnet-5-5, index v14, prompt v7",
+  "dataset": {
+    "name": "golden-v3",
+    "n": 400,
+    "sha256": "...",
+    "held_out": true,
+    "source": "sampled from prod logs Oct 2026"
+  },
+  "metrics": [
+    {
+      "id": "RAG-04",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 341,
+        "n": 400
+      },
+      "evidence_grade": "E2",
+      "judge_kappa": 0.71,
+      "evidence": "runs/2026-11-21/rag04.csv",
+      "notes": "k = required facts present in context"
+    },
+    {
+      "id": "RAG-09",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 3
+      },
+      "evidence_grade": "E4",
+      "evidence": "index build log",
+      "notes": "days since oldest unsynced source change"
+    },
+    {
+      "id": "RAG-02",
+      "mode": "DESIGN",
+      "design_check": "ABSENT",
+      "evidence_grade": "E0",
+      "notes": "no rank-labelled set exists"
+    },
+    {
+      "id": "RAG-07",
+      "status": "NOT_TESTED",
+      "notes": "citations not exposed by API"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "blocker",
+      "metric": "RAG-04",
+      "text": "Tables in PDFs are dropped by the chunker",
+      "fix": "Switch to a layout-aware parser; re-run RAG-04"
+    }
+  ],
+  "requirements_results": {
+    "REQ-02": "PASS"
+  },
+  "requirements_grade": "E3"
+}

@@ -1,0 +1,104 @@
+{
+  "module": "M6",
+  "applicable": true,
+  "evaluator": "agent-m6",
+  "run_at": "2026-11-21T10:00:00Z",
+  "config_under_test": "v2.3.0, model pinned to a dated version, prompt v11, index 2026-11-18",
+  "dataset": {
+    "name": "golden-v4",
+    "n": 400,
+    "sha256": "example",
+    "held_out": true,
+    "source": "sampled from Oct 2026 support logs"
+  },
+  "metrics": [
+    {
+      "id": "DRF-01",
+      "mode": "DESIGN",
+      "design_check": "PRESENT",
+      "evidence_grade": "E0",
+      "notes": "PSI job built, no production history yet"
+    },
+    {
+      "id": "DRF-02",
+      "mode": "DESIGN",
+      "design_check": "PRESENT",
+      "evidence_grade": "E0",
+      "notes": "centroid job built"
+    },
+    {
+      "id": "DRF-03",
+      "mode": "DESIGN",
+      "design_check": "PRESENT",
+      "evidence_grade": "E0",
+      "notes": "output dashboards built"
+    },
+    {
+      "id": "DRF-04",
+      "mode": "DESIGN",
+      "design_check": "PARTIAL",
+      "evidence_grade": "E0",
+      "notes": "fresh labelling not yet scheduled"
+    },
+    {
+      "id": "DRF-05",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.01
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/DRF-05.md",
+      "notes": "golden re-run on candidate model version"
+    },
+    {
+      "id": "DRF-06",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.996
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/DRF-06.md"
+    },
+    {
+      "id": "DRF-07",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/DRF-07.md"
+    },
+    {
+      "id": "DRF-08",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/DRF-08.md",
+      "notes": "probe every 10 min, caught injected DB outage in 1 interval"
+    },
+    {
+      "id": "DRF-09",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "check",
+        "passed": true
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/DRF-09.md"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "major",
+      "metric": "DRF-04",
+      "text": "No fresh-label sampling scheduled, so concept drift is invisible.",
+      "fix": "Label 200 production items each month; alert at floor."
+    }
+  ]
+}

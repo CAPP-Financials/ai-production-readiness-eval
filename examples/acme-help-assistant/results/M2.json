@@ -1,0 +1,129 @@
+{
+  "module": "M2",
+  "applicable": true,
+  "evaluator": "agent-m2",
+  "run_at": "2026-11-21T10:00:00Z",
+  "config_under_test": "v2.3.0, model pinned to a dated version, prompt v11, index 2026-11-18",
+  "dataset": {
+    "name": "golden-v4",
+    "n": 400,
+    "sha256": "example",
+    "held_out": true,
+    "source": "sampled from Oct 2026 support logs"
+  },
+  "metrics": [
+    {
+      "id": "RAG-01",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 388,
+        "n": 400
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/RAG-01.md"
+    },
+    {
+      "id": "RAG-02",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 0.78
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/RAG-02.md"
+    },
+    {
+      "id": "RAG-03",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 1720,
+        "n": 2000
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/RAG-03.md",
+      "judge_kappa": 0.72,
+      "notes": "questions = 400"
+    },
+    {
+      "id": "RAG-04",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 1310,
+        "n": 1450
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/RAG-04.md",
+      "judge_kappa": 0.72,
+      "notes": "questions = 400"
+    },
+    {
+      "id": "RAG-05",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 2390,
+        "n": 2500
+      },
+      "evidence_grade": "E3",
+      "evidence": "evidence/RAG-05.md",
+      "judge_kappa": 0.76,
+      "notes": "questions = 400"
+    },
+    {
+      "id": "RAG-06",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 389,
+        "n": 400
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/RAG-06.md"
+    },
+    {
+      "id": "RAG-07",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 1180,
+        "n": 1210
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/RAG-07.md",
+      "notes": "questions = 400"
+    },
+    {
+      "id": "RAG-08",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "rate",
+        "k": 39,
+        "n": 40
+      },
+      "evidence_grade": "E2",
+      "evidence": "evidence/RAG-08.md",
+      "notes": "only 40 unanswerable questions in golden set"
+    },
+    {
+      "id": "RAG-09",
+      "mode": "MEASURED",
+      "measured": {
+        "type": "value",
+        "value": 2
+      },
+      "evidence_grade": "E4",
+      "evidence": "evidence/RAG-09.md"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "major",
+      "metric": "RAG-08",
+      "text": "Only 40 unanswerable questions, too few to prove 95%.",
+      "fix": "Add 160 unanswerable questions from real out-of-scope tickets; re-run RAG-08."
+    }
+  ]
+}
