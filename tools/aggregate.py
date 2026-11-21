@@ -336,7 +336,7 @@ def render(profile, ev, results):
 
 
 def load_results(d):
-    return {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in pathlib.Path(d).glob("M*.json")}
+    return {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in sorted(pathlib.Path(d).glob("M*.json"))}
 
 
 def lint():
